@@ -1,57 +1,58 @@
-# Voice Flow (Tauri + Vanilla)
+# 🎙️ Voice Flow
 
-A small desktop app that captures microphone audio and sends it to Deepgram for live transcription. Built with vanilla HTML/CSS/JS and Tauri for cross-platform desktop packaging.
+**Voice Flow** is a cross-platform desktop application that provides real-time, high-accuracy voice-to-text transcription. Built as a functional clone of the "Wispr Flow" workflow, this app minimizes latency by streaming audio directly to Deepgram's Nova-2 AI model.
 
-## Features
-- Start/stop microphone recording
-- Live transcription (Deepgram)
-- Copy transcript to clipboard on stop
-- Clear transcript button and demo video support
+The application captures system audio, transcribes it instantly, and allows for one-click copying to the clipboard, streamlining the workflow for dictation and note-taking.
 
-## Development
+## 🚀 Features
 
-Start the app in development mode:
+* **Real-time Transcription:** Uses WebSocket streams for millisecond-latency speech recognition.
+* **AI-Powered:** Powered by Deepgram's **Nova-2** model for industry-leading accuracy.
+* **Cross-Platform:** Built with **Tauri (Rust)** for a lightweight, native desktop experience (macOS/Windows/Linux).
+* **Smart Clipboard:** Automatically copies transcribed text to the clipboard when recording stops.
+* **Minimalist UI:** Clean, dark-mode interface with visual feedback for recording states.
+
+## 🛠️ Tech Stack
+
+* **Frontend:** Vanilla JavaScript, HTML5, CSS3 (No heavy frameworks).
+* **Backend/Core:** Rust (via Tauri).
+* **AI Service:** Deepgram API (WebSocket Interface).
+* **Build Tool:** Vite.
+
+## ⚙️ Prerequisites
+
+Before running the project, ensure you have the following installed:
+
+1.  **Node.js** (v16 or higher)
+2.  **Rust** (Latest stable version via `rustup`)
+3.  **Deepgram API Key** (Get one at [console.deepgram.com](https://console.deepgram.com))
+
+## 📦 Installation
+
+1.  **Clone the repository** (or unzip the project folder):
+    ```bash
+    cd voice-flow
+    ```
+
+2.  **Install JavaScript dependencies:**
+    ```bash
+    npm install
+    npm install @deepgram/sdk
+    ```
+
+3.  **Configure API Key:**
+    Open `src/main.js` and replace the placeholder with your Deepgram API Key:
+    ```javascript
+    const deepgram = createClient("YOUR_API_KEY_HERE");
+    ```
+
+## 🏃‍♂️ How to Run
+
+To start the application in development mode:
 
 ```bash
-npm install
 npm run tauri dev
 ```
+## 🎥 Demo
 
-Open DevTools inside the app window to view console logs.
-
-## Demo video (how to add)
-
-You can add a short demo video to the app UI for showcasing the product. Place your demo video file at:
-
-```
-src/assets/demo.mp4
-```
-
-A demo page is included at `src/demo.html` that will load and play `src/assets/demo.mp4` when present. To view it in development, open the file in the app or a browser while running the dev server.
-
-Example embed snippet you can add to `src/index.html` if you want the demo in the main UI:
-
-```html
-<section id="demo">
-	<h2>Demo</h2>
-	<video src="./assets/demo.mp4" controls style="max-width:100%;"></video>
-</section>
-```
-
-Recommended video specs: H.264 MP4, under 50MB for easy packaging.
-
-If you need to convert/trim a recording, use ffmpeg:
-
-```bash
-# trim to first 30 seconds and re-encode
-ffmpeg -i input.mp4 -ss 0 -t 30 -c:v libx264 -crf 23 -c:a aac src/assets/demo.mp4
-```
-
-## Where to put the demo
-
-- Add `src/assets/demo.mp4` and then open `src/demo.html` in your browser or the running app to play it.
-
-## Notes
-- Keep your Deepgram API key secure — the current demo app stores it in `src/main.js` for simplicity; consider moving it to a secure backend or Tauri secure storage for production.
-
-Enjoy! If you want, I can add an in-app toggle that shows the demo video only when it exists.
+[![Watch the Demo]](https://drive.google.com/file/d/1j0LgsGz2waIUjk9URow2TrFfLYCjg1fF/view?usp=sharing)
