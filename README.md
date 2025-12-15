@@ -57,6 +57,6 @@ npm run tauri dev
 
 [![Watch the Demo]](https://drive.google.com/file/d/1j0LgsGz2waIUjk9URow2TrFfLYCjg1fF/view?usp=sharing)
 
-![Voice Flow Demo GIF](./src/assets/video.gif)
+![Voice Flow Demo GIF](src/assets/video-optimized.gif)
 
 *Watch Voice Flow in action.*
