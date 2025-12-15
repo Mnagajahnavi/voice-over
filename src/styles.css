@@ -1,0 +1,88 @@
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color-scheme: dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+}
+#clear-btn {
+  background-color: transparent;
+  border: 1px solid #666;
+  color: #ccc;
+  margin-right: 10px; /* Space between buttons */
+}
+
+#clear-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: #888;
+}
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  width: 100%;
+}
+
+h1 {
+  font-size: 2.7em;
+  margin-bottom: 20px;
+  /* Changed to a bright Cyan-to-White gradient for better visibility */
+  color: #00ffff;
+}
+
+.transcript-box {
+  background: #1a1a1a;
+  border-radius: 12px;
+  padding: 20px;
+  min-height: 150px;
+  max-height: 300px;
+  overflow-y: auto;
+  border: 1px solid #333;
+  margin-bottom: 30px;
+  text-align: left;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  color: rgba(255, 255, 255, 0.9); 
+  font-family: inherit;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.8em 1.5em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #646cff;
+  color: white;
+  cursor: pointer;
+  transition: border-color 0.25s, transform 0.1s;
+}
+
+button:hover {
+  background-color: #535bf2;
+}
+
+button.recording {
+  background-color: #ef4444; /* Red color when recording */
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.7; }
+  100% { opacity: 1; }
+}

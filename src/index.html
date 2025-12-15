@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      window.Buffer = window.Buffer || { isBuffer: () => false };
+    </script>
+    <link rel="stylesheet" href="./styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Voice Flow</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🎙️ Voice Flow</h1>
+      
+      <div id="transcript-box" class="transcript-box">
+        Start speaking...
+      </div>
+
+      <button id="clear-btn" style="display:none; margin-left:8px;">Clear Transcript</button>
+
+      <button id="record-btn">Start Recording</button>
+    </div>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
