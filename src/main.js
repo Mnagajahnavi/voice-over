@@ -76,18 +76,6 @@ async function startRecording() {
         }
       } else {
         // Buffer until the socket opens
-
-      // Demo video: show demo section only when the video can be loaded
-      if (demoVideo) {
-        demoVideo.addEventListener('loadedmetadata', () => {
-          if (demoSection) demoSection.style.display = 'block';
-        });
-        demoVideo.addEventListener('error', () => {
-          if (demoSection) demoSection.style.display = 'none';
-        });
-        // attempt to load metadata to trigger either loadedmetadata or error
-        try { demoVideo.load(); } catch (e) { if (demoSection) demoSection.style.display = 'none'; }
-      }
         pendingBlobs.push(event.data);
       }
     });
